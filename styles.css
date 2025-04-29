@@ -204,7 +204,7 @@ h2::after {
 
 .about-image img {
     width: 150%;
-    height: 150%;
+    height: 120%;
     border-radius: 8px; /* Normal corners, not circular */
     box-shadow: var(--shadow);
     object-fit: cover;
