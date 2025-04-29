@@ -197,6 +197,18 @@ h2::after {
     gap: 2rem;
 }
 
+.about-image {
+    flex: 1;
+    max-width: 350px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Normal corners, not circular */
+    box-shadow: var(--shadow);
+    object-fit: cover;
+}
 .about-text p {
     margin-bottom: 1rem;
 }
