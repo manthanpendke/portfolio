@@ -203,8 +203,8 @@ h2::after {
 }
 
 .about-image img {
-    width: 150%;
-    height: 80%;
+    width: 120%;
+    height: 120%;
     margin: auto;
     border-radius: 8px; /* Normal corners, not circular */
     box-shadow: var(--shadow);
