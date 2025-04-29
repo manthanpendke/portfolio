@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
 
     const elementsToAnimate = document.querySelectorAll(
-        '.section h2, .about-container > div, .skill-item, .timeline-item, .project-card, .experience-card, .achievements-list li, .contact-info a, .certification-list li'
+        '.section h2, .about-image, .about-container > div, .skill-item, .timeline-item, .project-card, .experience-card, .achievements-list li, .contact-info a, .certification-list li'
     );
 
     elementsToAnimate.forEach(el => {
