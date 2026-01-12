@@ -358,7 +358,7 @@ h2::after {
 }
 
 .timeline-item:nth-child(even)::after {
-    left: 23px;
+    left: 18px;
 }
 
 /* Card styling */
