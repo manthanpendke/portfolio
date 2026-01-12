@@ -550,4 +550,23 @@ h2::after {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+    /* === Education: Fit all 3 items in one screen === */
+
+/* Reduce overall timeline vertical padding */
+.education-section .timeline {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Pull the first card slightly upward */
+.education-section .timeline-item:first-child {
+    margin-top: -25px;
+}
+
+/* Reduce spacing between timeline items */
+.education-section .timeline-item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 }
