@@ -583,4 +583,27 @@ h2::after {
         font-size: 1.1rem;
     }
 }
+/* === Education: Make cards wide enough for one-line degree === */
+.timeline-content {
+    min-width: 420px;   /* key fix */
+}
+
+/* Optional: slightly smaller heading for safety */
+.timeline-content h3 {
+    font-size: 1.05rem;
+    white-space: nowrap;
+}
+
+/* Mobile: reset width so layout doesn’t break */
+@media (max-width: 768px) {
+    .timeline-content {
+        min-width: unset;
+    }
+
+    .timeline-content h3 {
+        white-space: normal;
+        font-size: 1.1rem;
+    }
+}
+
 
