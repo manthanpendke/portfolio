@@ -612,11 +612,109 @@ h2::after {
 
 /* ================= DARK MODE ================= */
 
+/* ================= DARK MODE (FINAL FIX) ================= */
+
 body.dark-mode {
-    --background-color: #0f172a;
+    --background-color: #0b1220;
     --text-color: #e5e7eb;
-    --heading-color: #f8fafc;
+    --heading-color: #f9fafb;
     --card-bg: #111827;
-    --shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
+
+/* Background */
+body.dark-mode {
+    background-color: var(--background-color);
+}
+
+/* ================= NAVBAR ================= */
+
+body.dark-mode .navbar {
+    background-color: #0f172a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .nav-logo {
+    color: #f9fafb;
+}
+
+body.dark-mode .nav-menu a {
+    color: #e5e7eb;
+}
+
+body.dark-mode .nav-menu a::after {
+    background-color: #60a5fa;
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+    body.dark-mode .nav-menu {
+        background-color: #0f172a;
+    }
+}
+
+/* ================= HERO ================= */
+
+body.dark-mode .hero-content .subtitle {
+    color: #cbd5f5;
+}
+
+/* ================= ALL CARDS (CRITICAL FIX) ================= */
+
+body.dark-mode .skill-item,
+body.dark-mode .timeline-content,
+body.dark-mode .experience-card,
+body.dark-mode .project-card,
+body.dark-mode .certification-list li,
+body.dark-mode .contact-info a {
+    background-color: #111827;
+    color: #e5e7eb;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
+}
+
+/* Card text */
+body.dark-mode p,
+body.dark-mode span {
+    color: #cbd5f5;
+}
+
+/* Project tech stack */
+body.dark-mode .tech-stack {
+    color: #93c5fd;
+}
+
+/* ================= TIMELINE ================= */
+
+body.dark-mode .timeline::after {
+    background-color: #60a5fa;
+}
+
+body.dark-mode .timeline-item::after {
+    background-color: #0f172a;
+    border-color: #60a5fa;
+}
+
+/* ================= CERTIFICATIONS ================= */
+
+body.dark-mode .certification-list a {
+    color: #60a5fa;
+}
+
+body.dark-mode .certification-list a::before {
+    color: #60a5fa;
+}
+
+/* ================= CONTACT ================= */
+
+body.dark-mode .contact-info a i {
+    color: #60a5fa;
+}
+
+/* ================= FOOTER ================= */
+
+body.dark-mode .footer {
+    background-color: #020617;
+    color: #94a3b8;
+}
+
 
