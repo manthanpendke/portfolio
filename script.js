@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // === Mobile Navigation Toggle ===
+
+    /* ================= MOBILE NAVIGATION ================= */
     const hamburger = document.getElementById('hamburger-button');
     const navMenu = document.querySelector('.nav-menu');
 
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         const icon = hamburger.querySelector('i');
+
         if (navMenu.classList.contains('active')) {
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
@@ -13,18 +15,30 @@ document.addEventListener('DOMContentLoaded', function () {
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
         }
-            // === Dark / Light Mode Toggle ===
+    });
+
+    /* Close mobile menu on link click */
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+    });
+
+    /* ================= DARK / LIGHT MODE ================= */
     const themeToggle = document.getElementById('themeToggle');
 
     if (themeToggle) {
         // Load saved theme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
+        if (localStorage.getItem('theme') === 'dark') {
             document.body.classList.add('dark-mode');
             themeToggle.textContent = '☀️';
         }
 
-        // Toggle theme on click
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
 
@@ -38,44 +52,30 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    });
-
-    // === Close Mobile Menu on Nav Link Click ===
-    document.querySelectorAll('.nav-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                const icon = hamburger.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-    });
-
-    // === Smooth Scrolling with Offset ===
+    /* ================= SMOOTH SCROLL ================= */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offset = document.querySelector('.navbar').offsetHeight;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
             }
         });
     });
 
-    // === Active Nav Link Highlighting on Scroll ===
+    /* ================= ACTIVE NAV LINK ================= */
     const sections = document.querySelectorAll('section[id]');
 
     function navHighlighter() {
         let scrollY = window.pageYOffset;
-        sections.forEach(current => {
-            const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - (document.querySelector('.navbar').offsetHeight + 50);
-            const sectionId = current.getAttribute('id');
-            const link = document.querySelector('.nav-menu a[href*=' + sectionId + ']');
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            const sectionHeight = section.offsetHeight;
+            const id = section.getAttribute('id');
+            const link = document.querySelector('.nav-menu a[href*=' + id + ']');
+
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                 link.classList.add('active');
             } else {
@@ -85,40 +85,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.addEventListener('scroll', navHighlighter);
-    navHighlighter(); // initial call
+    navHighlighter();
 
-    // === Footer Year Update ===
-    const currentYearSpan = document.getElementById('current-year');
-    if (currentYearSpan) {
-        currentYearSpan.textContent = new Date().getFullYear();
+    /* ================= FOOTER YEAR ================= */
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
 
-    // === Scroll Animations (including Certifications) ===
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observerCallback = (entries, observer) => {
+    /* ================= SCROLL ANIMATIONS ================= */
+    const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = 1;
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    };
+    }, { threshold: 0.1 });
 
-    const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
-
-    const elementsToAnimate = document.querySelectorAll(
-        '.section h2, .about-image, .about-container > div, .skill-item, .timeline-item, .project-card, .experience-card, .achievements-list li, .contact-info a, .certification-list li'
-    );
-
-    elementsToAnimate.forEach(el => {
+    document.querySelectorAll(
+        '.section h2, .about-image, .about-container > div, .skill-item, .timeline-item, .project-card, .experience-card, .contact-info a, .certification-list li'
+    ).forEach(el => {
         el.style.opacity = 0;
         el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        scrollObserver.observe(el);
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
     });
+
 });
