@@ -224,11 +224,13 @@ h2::after {
     height: 220px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: var(--shadow);
-    border: 4px solid #ffffff;               /* white border */
-    outline: 2px solid rgba(74, 144, 226, 0.25); /* soft blue ring */
-    outline-offset: -6px;
+
+    /* Subtle, natural halo */
+    box-shadow:
+        0 0 0 6px rgba(74, 144, 226, 0.12),
+        0 12px 30px rgba(0, 0, 0, 0.12);
 }
+
 
 /* About text block (key fix) */
 .about-text {
