@@ -594,3 +594,29 @@ h2::after {
         font-size: 1.1rem;
     }
 }
+/* ================= THEME TOGGLE BUTTON ================= */
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-left: 20px;
+    color: var(--heading-color);
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg);
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark-mode {
+    --background-color: #0f172a;
+    --text-color: #e5e7eb;
+    --heading-color: #f8fafc;
+    --card-bg: #111827;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
