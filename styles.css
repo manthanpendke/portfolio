@@ -191,39 +191,19 @@ h2::after {
 }
 
 /* === About === */
-/* === About Section Layout Fix === */
+/* ================= ABOUT SECTION ================= */
+
+/* Container layout */
 .about-container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
-/* Center ONLY the photo */
+/* Center ONLY the profile image */
 .about-image {
     display: flex;
     justify-content: center;
-}
-
-/* Keep text left-aligned */
-.about-text {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-/* Center ONLY the resume button */
-.about-text .btn {
-    display: block;
-    width: fit-content;
-    margin: 25px auto 0;
-}
-
-
-/* Centered circular image */
-.about-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .about-image img {
@@ -234,16 +214,27 @@ h2::after {
     box-shadow: var(--shadow);
 }
 
-/* Center resume button */
+/* About text block */
 .about-text {
-    max-width: 700px;
-    text-align: center;
+    max-width: 900px;          /* controls text width */
+    margin: 0 auto;            /* centers the block */
+    text-align: left;          /* left-aligned text */
 }
 
+/* Paragraph styling */
 .about-text p {
-    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-color);
+    text-align: left;
 }
 
+/* Center ONLY the resume button */
+.about-text .btn {
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0;
+}
 /* === Skills === */
 .skills-grid {
     display: grid;
