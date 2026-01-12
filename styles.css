@@ -550,7 +550,9 @@ h2::after {
     .projects-grid {
         grid-template-columns: 1fr;
     }
-    /* === Education: Fit all 3 items in one screen === */
+
+}
+   /* === Education: Fit all 3 items in one screen === */
 
 /* Reduce overall timeline vertical padding */
 .education-section .timeline {
@@ -582,5 +584,3 @@ h2::after {
     }
 }
 
-
-}
