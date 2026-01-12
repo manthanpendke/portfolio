@@ -354,11 +354,11 @@ h2::after {
 
 /* Dot positioning */
 .timeline-item:nth-child(odd)::after {
-    right: -23px;
+    right: -33px;
 }
 
 .timeline-item:nth-child(even)::after {
-    left: -23px;
+    left: -3px;
 }
 
 /* Card styling */
