@@ -568,5 +568,19 @@ h2::after {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+/* === Education: Force degree title in one line === */
+.timeline-content h3 {
+    white-space: nowrap;          /* prevent line break */
+    font-size: 1.05rem;           /* slightly smaller to fit */
+}
+
+/* Mobile: allow wrap again (important) */
+@media (max-width: 768px) {
+    .timeline-content h3 {
+        white-space: normal;
+        font-size: 1.1rem;
+    }
+}
+
 
 }
