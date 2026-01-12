@@ -193,17 +193,30 @@ h2::after {
 /* === About === */
 /* ================= ABOUT SECTION ================= */
 
-/* Container layout */
+/* ================= ABOUT SECTION (FINAL) ================= */
+
+/* Reduce extra top spacing only for About */
+.about-section {
+    padding-top: 40px;      /* reduced from global 80px */
+}
+
+/* Layout container */
 .about-container {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 1.5rem;            /* tighter vertical spacing */
+}
+
+/* Reduce space below heading */
+.about-section h2 {
+    margin-bottom: 1.5rem;
 }
 
 /* Center ONLY the profile image */
 .about-image {
     display: flex;
     justify-content: center;
+    margin-top: -10px;      /* pulls image closer to heading */
 }
 
 .about-image img {
@@ -214,11 +227,11 @@ h2::after {
     box-shadow: var(--shadow);
 }
 
-/* About text block */
+/* About text block (key fix) */
 .about-text {
-    max-width: 900px;          /* controls text width */
-    margin: 0 auto;            /* centers the block */
-    text-align: left;          /* left-aligned text */
+    max-width: 900px;       /* controls line length */
+    margin: 0 auto;         /* centers the block */
+    text-align: left;       /* text reads naturally */
 }
 
 /* Paragraph styling */
@@ -229,7 +242,7 @@ h2::after {
     text-align: left;
 }
 
-/* Center ONLY the resume button */
+/* Center ONLY the Download Resume button */
 .about-text .btn {
     display: block;
     width: fit-content;
