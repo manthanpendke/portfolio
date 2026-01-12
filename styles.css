@@ -315,7 +315,7 @@ h2::after {
     background-color: var(--primary-color);
     top: 0;
     bottom: 0;
-    left: 50%;
+    left: 53%;
     transform: translateX(-50%);
     border-radius: 2px;
 }
@@ -354,11 +354,11 @@ h2::after {
 
 /* Dot positioning */
 .timeline-item:nth-child(odd)::after {
-    right: -9px;
+    right: -13px;
 }
 
 .timeline-item:nth-child(even)::after {
-    left: -9px;
+    left: -13px;
 }
 
 /* Card styling */
