@@ -552,58 +552,42 @@ h2::after {
     }
 
 }
-   /* === Education: Fit all 3 items in one screen === */
+/* ================= EDUCATION OVERRIDES (FINAL) ================= */
 
-/* Reduce overall timeline vertical padding */
+/* Fit all 3 cards in one screen */
 .education-section .timeline {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 0;
 }
 
-/* Pull the first card slightly upward */
+/* Slightly lift first card */
 .education-section .timeline-item:first-child {
     margin-top: -25px;
 }
 
-/* Reduce spacing between timeline items */
+/* Reduce vertical spacing between items */
 .education-section .timeline-item {
     padding-top: 15px;
     padding-bottom: 15px;
 }
-/* === Education: Force degree title in one line === */
-.timeline-content h3 {
-    white-space: nowrap;          /* prevent line break */
-    font-size: 1.05rem;           /* slightly smaller to fit */
+
+/* Ensure degree stays on one line (desktop only) */
+.education-section .timeline-content {
+    min-width: 420px;
 }
 
-/* Mobile: allow wrap again (important) */
-@media (max-width: 768px) {
-    .timeline-content h3 {
-        white-space: normal;
-        font-size: 1.1rem;
-    }
-}
-/* === Education: Make cards wide enough for one-line degree === */
-.timeline-content {
-    min-width: 420px;   /* key fix */
-}
-
-/* Optional: slightly smaller heading for safety */
-.timeline-content h3 {
-    font-size: 1.05rem;
+.education-section .timeline-content h3 {
     white-space: nowrap;
+    font-size: 1.05rem;
 }
 
-/* Mobile: reset width so layout doesn’t break */
+/* Mobile safety reset */
 @media (max-width: 768px) {
-    .timeline-content {
+    .education-section .timeline-content {
         min-width: unset;
     }
 
-    .timeline-content h3 {
+    .education-section .timeline-content h3 {
         white-space: normal;
         font-size: 1.1rem;
     }
 }
-
-
