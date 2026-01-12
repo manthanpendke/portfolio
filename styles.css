@@ -213,10 +213,24 @@ h2::after {
 }
 
 /* Center ONLY the profile image */
+/* === Profile Image Wrapper (Correct Way) === */
 .about-image {
     display: flex;
     justify-content: center;
-    margin-top: -10px;      /* pulls image closer to heading */
+}
+
+.about-image::before {
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: rgba(74, 144, 226, 0.12);
+    z-index: 0;
+}
+
+.about-image {
+    position: relative;
 }
 
 .about-image img {
@@ -224,12 +238,11 @@ h2::after {
     height: 220px;
     border-radius: 50%;
     object-fit: cover;
-
-    /* Subtle, natural halo */
-    box-shadow:
-        0 0 0 6px rgba(74, 144, 226, 0.12),
-        0 12px 30px rgba(0, 0, 0, 0.12);
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
+
 
 
 /* About text block (key fix) */
