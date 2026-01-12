@@ -348,16 +348,13 @@ h2::after {
     border: 4px solid var(--primary-color);
     border-radius: 50%;
     z-index: 1;
+
+     /* alignment fix */
+    left: 53%;
+    transform: translateX(-50%);
 }
 
-/* Dot positioning */
-.timeline-item:nth-child(odd)::after {
-    right: -10px;
-}
 
-.timeline-item:nth-child(even)::after {
-    left: -10px;
-}
 
 /* Card styling */
 .timeline-content {
