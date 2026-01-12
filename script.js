@@ -28,18 +28,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* ================= THEME TOGGLE (SLIDING) ================= */
     /* ================= DARK / LIGHT MODE ================= */
+/* ================= DARK / LIGHT MODE ================= */
 const themeToggle = document.getElementById('themeToggle');
 const toggleIcon = themeToggle?.querySelector('.toggle-icon');
 
 if (themeToggle) {
 
-    // Load saved theme
-    if (localStorage.getItem('theme') === 'dark') {
+    // ✅ DEFAULT: Dark Mode ON
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+        document.body.classList.remove('dark-mode');
+        themeToggle.classList.remove('dark');
+        toggleIcon.textContent = '🌙';
+    } else {
+        // Default to dark
         document.body.classList.add('dark-mode');
         themeToggle.classList.add('dark');
         toggleIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
     }
 
+    // Toggle on click
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         themeToggle.classList.toggle('dark');
@@ -53,6 +63,7 @@ if (themeToggle) {
         }
     });
 }
+
 
 
     /* ================= SMOOTH SCROLL ================= */
