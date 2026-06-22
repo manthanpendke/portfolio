@@ -438,44 +438,27 @@ h2::after {
 /* === Projects (2 x 2 Grid) === */
 .projects-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
     gap:2rem;
 }
 
 .project-card{
-    display:flex;
-    flex-direction:column;
-    height:100%;
-    min-height:100%;
-}
-
-.project-card{
-    background-color:var(--card-bg);
-    padding:20px;
+    background:#0f172a;
     border-radius:12px;
-    box-shadow:var(--shadow);
-    transition:all 0.3s ease;
+    padding:25px;
+    transition:0.3s;
 }
 
 .project-card:hover{
     transform:translateY(-5px);
 }
 
-.project-link{
-    margin-top:auto;
-    display:inline-block;
-    font-weight:600;
-    color:var(--primary-color);
+.project-info h3{
+    margin-bottom:15px;
 }
 
-.project-info h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.project-info .tech-stack {
-    font-size: 0.9rem;
-    color: #666;
+.tech-stack{
+    margin-top:15px;
 }
 
 /* === Certifications === */
