@@ -131,3 +131,22 @@ if (themeToggle) {
     });
 
 });
+
+document.querySelectorAll('.read-more-btn').forEach(button => {
+
+    button.addEventListener('click', function () {
+
+        const card = this.closest('.project-card');
+
+        card.classList.toggle('expanded');
+
+        if (card.classList.contains('expanded')) {
+            this.textContent = 'Read Less';
+        } else {
+            this.textContent = 'Read More';
+        }
+
+    });
+
+});
+
