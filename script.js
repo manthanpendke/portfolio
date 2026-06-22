@@ -139,13 +139,13 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
         const card = this.closest('.project-card');
 
         card.classList.toggle('expanded');
+        card.classList.toggle('collapsed');
 
         if (card.classList.contains('expanded')) {
             this.textContent = 'Read Less';
         } else {
             this.textContent = 'Read More';
         }
-
     });
 
 });
