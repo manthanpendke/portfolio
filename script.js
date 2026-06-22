@@ -122,7 +122,7 @@ if (themeToggle) {
     }, { threshold: 0.1 });
 
     document.querySelectorAll(
-        '.section h2, .about-image, .about-container > div, .skill-item, .timeline-item, .project-card, .experience-card, .contact-info a, .certification-list li'
+        '.section h2, .about-image, .about-container > div, .skill-item, .timeline-item, .project-card, .experience-card, .contact-info a, .certification-list li, .achievement-list li'
     ).forEach(el => {
         el.style.opacity = 0;
         el.style.transform = 'translateY(30px)';

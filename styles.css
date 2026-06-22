@@ -420,6 +420,16 @@ h2::after {
     border-left: 5px solid var(--primary-color);
 }
 
+.experience-details {
+    margin-top: 15px;
+    padding-left: 20px;
+    color: var(--text-color);
+}
+
+.experience-details li {
+    margin-bottom: 8px;
+}
+
 /* === Projects (2 x 2 Grid) === */
 .projects-grid {
     display: grid;
@@ -446,7 +456,8 @@ h2::after {
 
 /* === Certifications === */
 .certifications-section { background-color: var(--background-color); text-align: center; } 
-.certification-list { 
+.certification-list,
+.achievement-list {
     max-width: 800px;
     margin: 0 auto; 
     padding: 0; 
@@ -455,7 +466,8 @@ h2::after {
     flex-direction: column;
     gap: 1rem; } 
 
-.certification-list li {
+.certification-list li,
+.achievement-list li {
     background-color: var(--card-bg);
     padding: 15px 20px;
     border-radius: 8px; 
@@ -463,22 +475,34 @@ h2::after {
     text-align: left; 
     transition: transform 0.3s ease, box-shadow 0.3s ease; } 
 
-.certification-list li:hover { 
+.certification-list li:hover,
+.achievement-list li:hover {
     transform: translateY(-3px); 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); }
 
-.certification-list a {
+.certification-list a,
+.certification-name {
     color: var(--primary-color);
     font-weight: 600; font-size: 1rem;
     display: flex; align-items: center;
     gap: 10px; }
 
-.certification-list a::before {
+.certification-list a::before,
+.certification-name::before {
     content: '\f02d';
     font-family: 'Font Awesome 6 Free'; 
     font-weight: 900;
     color: var(--primary-color);
     font-size: 1.2rem; }
+
+.achievements-section {
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.achievement-list li {
+    border-left: 5px solid var(--primary-color);
+}
 
 /* === Contact === */
 .contact-info {
@@ -664,6 +688,7 @@ body.dark-mode .timeline-content,
 body.dark-mode .experience-card,
 body.dark-mode .project-card,
 body.dark-mode .certification-list li,
+body.dark-mode .achievement-list li,
 body.dark-mode .contact-info a {
     background-color: #111827;
     color: #e5e7eb;
@@ -694,11 +719,13 @@ body.dark-mode .timeline-item::after {
 
 /* ================= CERTIFICATIONS ================= */
 
-body.dark-mode .certification-list a {
+body.dark-mode .certification-list a,
+body.dark-mode .certification-name {
     color: #60a5fa;
 }
 
-body.dark-mode .certification-list a::before {
+body.dark-mode .certification-list a::before,
+body.dark-mode .certification-name::before {
     color: #60a5fa;
 }
 
@@ -742,7 +769,8 @@ body.dark-mode .project-card:hover {
 }
 
 /* Certification cards */
-body.dark-mode .certification-list li:hover {
+body.dark-mode .certification-list li:hover,
+body.dark-mode .achievement-list li:hover {
     transform: translateY(-4px);
     box-shadow: 0 16px 35px rgba(96, 165, 250, 0.25);
 }
