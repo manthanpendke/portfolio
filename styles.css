@@ -1028,3 +1028,36 @@ body.dark-mode .experience-card .date {
 .resume-buttons .btn{
     margin:0;
 }
+
+.project-card {
+    background: #0f172a;
+    border-radius: 12px;
+    padding: 25px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.project-description {
+    max-height: 90px;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.project-card.expanded .project-description {
+    max-height: 500px;
+}
+
+.read-more-btn {
+    margin-top: 12px;
+    background: none;
+    border: none;
+    color: #3b82f6;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
+
