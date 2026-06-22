@@ -127,6 +127,10 @@ h2::after {
     color: var(--heading-color);
 }
 
+.nav-logo {
+    white-space: nowrap;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
