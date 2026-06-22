@@ -1031,33 +1031,36 @@ body.dark-mode .experience-card .date {
 
 .project-card {
     background: #0f172a;
-    border-radius: 12px;
+    border-radius: 15px;
     padding: 25px;
-    overflow: hidden;
-    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 420px;
 }
 
 .project-description {
-    max-height: 90px;
     overflow: hidden;
-    transition: max-height 0.4s ease;
+}
+
+.project-card.collapsed .project-description {
+    max-height: 170px;
 }
 
 .project-card.expanded .project-description {
-    max-height: 500px;
+    max-height: 1000px;
 }
 
 .read-more-btn {
-    margin-top: 12px;
+    margin-top: 15px;
     background: none;
     border: none;
     color: #3b82f6;
-    cursor: pointer;
     font-weight: 600;
-    font-size: 1rem;
+    cursor: pointer;
+    padding: 0;
 }
 
 .read-more-btn:hover {
     text-decoration: underline;
 }
-
