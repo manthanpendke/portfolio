@@ -940,9 +940,7 @@ body.dark-mode .toggle-thumb i {
     transform: translateY(-8px);
 }
 
-.project-info h3 {
-    min-height: 55px;
-}
+
 
 /* Resume Buttons */
 .about-text .btn {
@@ -1030,13 +1028,14 @@ body.dark-mode .experience-card .date {
 }
 
 .project-card {
-    background: #0f172a;
+    background: var(--card-bg);
     border-radius: 15px;
     padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100%;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
 }
 
 .project-description {
@@ -1044,21 +1043,29 @@ body.dark-mode .experience-card .date {
 }
 
 .project-card.collapsed .project-description {
-    max-height: 170px;
+    max-height: 200px;
 }
 
 .project-card.expanded .project-description {
     max-height: 1000px;
 }
 
+.project-card .project-info {
+    color: var(--text-color);
+}
+
+.project-card h3 {
+    color: var(--primary-color);
+}
+
 .read-more-btn {
-    margin-top: 5px;
+    margin-top: auto;
     background: none;
     border: none;
     color: #3b82f6;
     font-weight: 600;
     cursor: pointer;
-    padding: 0;
+    padding: 10px;
 }
 
 .read-more-btn:hover {
